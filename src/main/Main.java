@@ -9,19 +9,14 @@ public class Main {
 	private static Controller control = new Controller();
 	
 	public static void main(String[] args) {
-		System.out.println("Escribir el valor del primer vertice");
 		int a = addNewVertex();
 		control.addVertex(a);
-		System.out.println("Escribir el valor del segundo vertice");
 		int b = addNewVertex();
 		control.addVertex(b);
-		System.out.println("Escribir el valor del tercero vertice");
 		int c = addNewVertex();
 		control.addVertex(c);
-		System.out.println("Escribir el valor del cuarto vertice");
 		int d = addNewVertex();
 		control.addVertex(d);
-		System.out.println("Escribir el valor del ultimo vertice");
 		int e = addNewVertex();
 		control.addVertex(e);
 		
@@ -42,8 +37,17 @@ public class Main {
 		ei.add(2);
 		control.addNext( e, ei);
 		
-		//dfs(d);
-		bfs(a);
+		System.out.println("1. DFS 2. BFS");
+		int i = sc.nextInt();
+		sc.nextLine();
+		System.out.println("desde cual quieres empezar");
+		int j = sc.nextInt();
+		sc.nextLine();
+		if(i == 1) {
+			dfs(d);
+		}else {
+			bfs(a);
+		}
 		
 		if(control.allVisited()) {
 			System.out.println("fuerte");
